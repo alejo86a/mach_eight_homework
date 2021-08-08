@@ -16,10 +16,28 @@ describe('algorithm()', () => {
 
     expect(actual).toEqual(expected)
   })
+
+  test('If no matches are found, should retuns "No matches found"', () => {
+    const given = 0
+
+    const expected = 'No matches found'
+
+    const actual = algorithm(players, given)
+
+    expect(actual).toEqual(expected)
+  })
+
+  test('Given an empty array should returns "No matches found"', () => {
+    const given = 139
+
+    const expected = 'No matches found'
+
+    const actual = algorithm([], given)
+
+    expect(actual).toEqual(expected)
+  })
 })
 
 // un mismo jugador tenga varias parejas
-// que retorne parejas
-// lo que pasa si el array es vacio
 // lo que pasa si el array tiene un solo jugador
 // que un jugador tenga la altura nula
