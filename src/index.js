@@ -1,5 +1,5 @@
 const algorithm = require('./algorithm')
-const Request = require("request")
+// const Request = require('request')
 
 let args = process.argv.slice(2)
 let players = []
@@ -21,10 +21,9 @@ let players = []
 //     console.dir(JSON.parse(body));
 // });
 
-const fs = require('fs');
+const fs = require('fs')
 
-let rawdata = fs.readFileSync('./src/data.json');
-players = JSON.parse(rawdata).values;
-// console.log(players[0]);
+let rawdata = fs.readFileSync('./src/data.json')
+players = JSON.parse(rawdata).values
 
 console.log(algorithm(players, args))
