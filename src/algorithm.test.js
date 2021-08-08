@@ -12,3 +12,9 @@ describe('algorithm()', () => {
     expect(actual).toEqual(expected)
   })
 })
+
+//un mismo jugador tenga varias parejas
+//que retorne parejas
+//lo que pasa si el array es vacio
+//lo que pasa si el array tiene un solo jugador
+//que un jugador tenga la altura nula
