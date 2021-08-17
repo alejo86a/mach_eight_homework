@@ -1,29 +1,22 @@
 const algorithm = require('./algorithm')
-// const Request = require('request')
+const Request = require('request')
+const fs = require('fs')
+
+
 
 let args = process.argv.slice(2)
 let players = []
-// Request.get("https://mach-eight.uc.r.appspot.com/").then(body => {
-//     console.log(algorithm(JSON.parse(body),args))
-// });
-//  {
-//     if(error) {
-//         return console.dir("error: ", error);
-//     }
-//     return console.log(algorithm(JSON.parse(body),args));
-//     // return console.log("data: ",JSON.parse(body));
-// }
 
-// Request.get("https://mach-eight.uc.r.appspot.com/", (error, response, body) => {
-//     if(error) {
-//         return console.dir(error);
-//     }
-//     console.dir(JSON.parse(body));
-// });
+if(args[1] === 'online'){
+    players = Request.get("https://mach-eight.uc.r.appspot.com/", (error, response, body) => {
+        if(error) {
+            return console.dir(error)
+        }
+        console.log(algorithm(Array.from(JSON.parse(body).values), args[0]))
+    })
+} else {    
+    let rawdata = fs.readFileSync('./data.json')
+    players = JSON.parse(rawdata).values
 
-const fs = require('fs')
-
-let rawdata = fs.readFileSync('./src/data.json')
-players = JSON.parse(rawdata).values
-
-console.log(algorithm(players, args))
+    console.log(algorithm(players, args[0]))
+}
