@@ -2,7 +2,7 @@
 const algorithm = require('./algorithm')
 const fs = require('fs')
 
-let rawdata = fs.readFileSync('./src/data.json')
+let rawdata = fs.readFileSync('./data.json')
 const players = JSON.parse(rawdata).values
 
 describe('algorithm()', () => {
@@ -36,8 +36,21 @@ describe('algorithm()', () => {
 
     expect(actual).toEqual(expected)
   })
-})
 
-// un mismo jugador tenga varias parejas
-// lo que pasa si el array tiene un solo jugador
-// que un jugador tenga la altura nula
+  test('Given 139 should returns example although some players have height null', () => {
+    const given = 139
+
+    const expected = `- Brevin Knight         Nate Robinson
+- Nate Robinson         Mike Wilks`
+
+    let playersAux = Object.assign(players)
+
+    playersAux[0].h_in = null
+    playersAux[1].h_in = null
+    playersAux[2].h_in = null
+
+    const actual = algorithm(playersAux, given)
+
+    expect(actual).toEqual(expected)
+  })
+})

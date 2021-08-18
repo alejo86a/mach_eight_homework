@@ -7,9 +7,9 @@ module.exports = (players, sumOfHeight) => {
       result.push(resultAux.join('\n'))
     }
   }
-  if(result.length===0){
+  if (result.length === 0) {
     return 'No matches found'
-  }else {
+  } else {
     return result.join('\n')
   }
 }
