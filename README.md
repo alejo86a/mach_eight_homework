@@ -1,9 +1,48 @@
-# Boilerplate for Testing NodeJs Applications with Jest and Generating Coverage Report
+# Match eight entry level by Alejandro Berrio
 
-## Motivation
+## Scope
+The purpose of this repository is to provide a solution to the match eight company's entry test, which requests to develop an algorithm to find pairs of NBA players that, when added, equals the entered value. 
 
-A simple and straigh forward way to introduce testing with __Jest__ to a NodeJs project, but following the [__RITE way__](https://medium.com/javascript-scene/tdd-the-rite-way-53c9b46f45e3) methodology for developing unit tests, because since i knowed it, it made me a lot of sence and has been a very valuable and also reliable tool for my day to day _Unit Testing_ developing and _TDD_ flow.
+## How to run
+To run the application there are three ways to do it: local, online and unit tests.
 
-## Coverage Report for Basic Implementation
+But first it is essential after cloning it to install its node dependencies with 
 
-![Coverage Report](./coverage_report.png)
+``` npm install ```
+### local
+When running in local mode, what the application does is use a previously downloaded version of the data.
+
+To do it simply run the following command
+
+```npm run start [[value]]``` 
+
+where `value` is the amount of the heights added
+
+example:
+
+![running in local](./proof-local.png)
+
+### online
+
+When running in online mode, what the application does is comsume and endpoint in order to get the data.
+
+To do it simply run the following command
+
+```npm run start [[value]] online``` 
+
+where `value` is the amount of the heights added
+
+example:
+
+![running online](./proof-online.png)
+
+### tests
+
+There are some unit tests that check the normal workflow of the algotihm
+To do it simply run the following command
+
+```npm run test``` 
+
+example
+
+![running tests](./proof-test.png)
